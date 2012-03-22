@@ -1,10 +1,26 @@
 \documentclass[smaller,pdf,svgnames]{beamer}
 
-\usetheme[right, color=green]{lrde}
-
 \title {Genetic algorithm overview}
 \author{Thomas Badie \and Victor Lenoir \and Pierre Parutto}
 \institute{LRDE\\Laboratoire de Recherche et D\'eveloppement de l'EPITA}
+
+\usetheme{Warsaw}
+
+%% To get the page numbering clean.
+\defbeamertemplate*{footline}{shadow theme}
+{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertframenumber\,/\,\inserttotalframenumber\hfill\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle%
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+% To do not have the summary on each slide.
+\setbeamertemplate{headline}{}
 
 \begin{document}
 
@@ -12,15 +28,31 @@
   \maketitle
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Table of contents}
   \tableofcontents
 \end{frame}
 
-\section{Theory}
+
 \include{src/theory}
 
-\section{Applications}
 \include{src/application}
+
+
+\begin{frame}
+  \frametitle{Conclusion}
+  Conclusion?
+\end{frame}
+
+\begin{frame}
+  \frametitle{Questions?}
+  % Thanks for your attention,
+
+  % Questions?
+  \begin{center}
+    \includegraphics[scale=0.7]{img/questions.jpg}
+  \end{center}
+
+\end{frame}
 
 \section{References}
 
