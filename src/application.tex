@@ -3,39 +3,89 @@
 \subsection{Prerequisites}
 
 \begin{frame}{MMORPG}
-  things and stuff
+  \begin{block}{Definition}
+    \begin{itemize}
+    \item Massively Multiplayer Online RolePlaying Game
+    \item Persistent World
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Environment properties}
+    \begin{itemize}
+    \item Monsters
+      \begin{itemize}
+      \item Agressive
+      \item Passive
+      \end{itemize}
+    \item
+
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Purpose}
+    \begin{itemize}
+    \item Kill monsters
+    \item Survive
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 \begin{frame}{Openkore}
-  other stuff and more things
-\end{frame}
 
+  \begin{block}{Definition}
+    \begin{itemize}
+    \item Program (Bot) which simulate a player in a MMORPG (here Ragnarok Online)
+    \item Take a configuration file (so the bot is scriptable) as input
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Why this application ?}
+    \begin{itemize}
+    \item There is a complex environment where the bot has life points, experience, position and a lot of other properties
+    \item The bot is subjected to virtual physical constraints therefore we can have a lot of different fitness functions
+    \item A lot of parameters available to customize the bot behaviour
+    \item Easy to implement
+    \end{itemize}
+  \end{block}
+
+\end{frame}
 \subsection{Principle}
 
 \begin{frame}{Parameters}
-\end{frame}
 
-\begin{frame}{Fitness functions}
-
-  \begin{block}{Life point}
+  \begin{block}{Parameters / Genes}
+    \begin{itemize}
+    \item The reaction of the bot when he sees an enemy:
+      \begin{itemize}
+      \item Attack
+      \item Run away
+      \item etc
+      \end{itemize}
+    \item A total of N * 6 parameters where N is the number of monsters on the map
+    \end{itemize}
   \end{block}
 
-  \begin{block}{Experience}
-  \end{block}
-
-  \begin{block}{Hybrid}
+  \begin{block}{Example}
+    TODO: Display parameters for one bot
   \end{block}
 
 \end{frame}
 
 \begin{frame}{Repopulation}
-
-  \begin{block}{Mutation}
+  \begin{block}{Selected fitness functions}
+    \begin{itemize}
+    \item Life points : Try to minimize the life points lost in a round
+    \item Experience points : Try to maximize the experience points acquired in a round
+    \item Hybrid : Try to maximize the function $f = \frac{exp}{life} $
+    \end{itemize}
   \end{block}
 
-  \begin{block}{Crossover}
+  \begin{block}{Selected reproduction}
+    \begin{itemize}
+    \item Mutation
+    \item Crossover
+    \end{itemize}
   \end{block}
-
 \end{frame}
 
 \subsection{Demonstration}
@@ -43,3 +93,9 @@
 \begin{frame}{Demonstration}
   Demonstration !
 \end{frame}
+
+\subsection{Result}
+
+\begin{frame}{Result}
+  TODO: Insert results for different fitness functions here
+\end{frame}{Result}
