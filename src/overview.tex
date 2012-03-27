@@ -21,8 +21,8 @@
   \begin{block}{Sexual/Asexual?}
     \begin{itemize}
     \item<6-7> Asexual reproduction is based on cloning, and
-      eventually muting.
-    \item<7> Sexual is based on shuffling.
+      eventually mutation.
+    \item<7> Sexual is based on crossover.
     \end{itemize}
   \end{block}
 }
@@ -52,7 +52,7 @@
 
 
 \begin{frame}
-  \frametitle{The basis graphical overview}
+  \frametitle{A basis graphical overview}
   \begin{center}
     \includegraphics[scale=0.5]{img/cycle}
   \end{center}
@@ -66,9 +66,44 @@
     \begin{itemize}[<+->]
     \item When you are looking for genetic programming, you'll find a
       lot of different things.
+    \item In this talk, we consider Evolutionary Algorithm as an
+      umbrella term to represent techniques which use evolution.
+    \end{itemize}
+  \end{block}
+
+\visible<3->{
+  \begin{center}
+    \includegraphics[scale=0.4]{img/ea}
+  \end{center}
+}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Genetic Algorithms}
+  \begin{block}{History}
+    \begin{itemize}[<+->]
+    \item Developed by Holland\cite{Holland1992}.
+    \item The original GA uses:
+      \begin{itemize}[<+->]
+        \item fixed-length binary representation.
+        \item Crossover a lot.
+      \end{itemize}
+    \item This model has been extended, now GA uses an alphabet (like DNA).
+    \item We'll let the theoretical development for the second part.
+      %% In this phrase, I mean Pierre, you have to explain the GA 1-point
+      %% crossover (GP An introduction p96) and the schemata.
     \end{itemize}
   \end{block}
 \end{frame}
+
+\begin{frame}{Genetic Algorithms (cont.)}
+    \begin{algorithmic}
+      \State t := 0
+      \State initPopulation P(t)
+      \State evaluate P(t)
+    \end{algorithmic}
+\end{frame}
+
 %%% Local Variables:
 %%% mode: latex
 %%% mode: flyspell
