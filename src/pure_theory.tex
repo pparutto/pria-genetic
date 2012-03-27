@@ -1,26 +1,73 @@
 \section{Theory}
 
-\subsection{Genomic}
+\begin{frame}{Motivations}
+  \begin{block}{Algorithmic problems}
+    \begin{itemize}
+      \item Stochastic
+      \item Convergence
+    \end{itemize}
+  \end{block}
 
-\begin{frame}[plain]{TUNAK TUNAK}
-Pierre.
-\end{frame}
-
-\subsection{Computer Science}
-
-\begin{frame}{First Approaches}
-  \begin{block}{1958}
-    \cite{fraser1958monte}
+  \begin{block}{Modelisation problems}
+    \begin{itemize}
+      \item How to encode a problem?
+      \item Size of the initial population?
+      \item Mutation operator?
+      \item Recombination operator?
+      \item Individual selection?
+    \end{itemize}
   \end{block}
 \end{frame}
 
 \subsection{Schemata Theorem}
-\begin{frame}{Hypothesis}
-  coucou
+\begin{frame}{Presentation}
+  \begin{block}{Goal}
+    \begin{itemize}
+    \item Defined by J.Holland in 1975\cite{holland1992}.
+    \item Represent a group of indidual who all share some caracteristics.
+    \item One schema, two schemata ;)
+    \end{itemize}
+  \end{block}    
+
+  \begin{block}{Definition}
+    \begin{itemize}
+    \item Defined on the alphabet: $\{0;1;\#\}$
+    \item $\#$ is "Don't care": it can be 0 or 1
+    \end{itemize}
+  \end{block}
 \end{frame}
 
-\begin{frame}{Developments}
-  tunak tunak
+\begin{frame}{Example and mesures}
+  \begin{block}{Example}
+    \begin{itemize}
+    \item The schema: $H = 1\textcolor{red}{\#}10\textcolor{red}{\#}1\textcolor{red}{\#}$
+    \item Represents the following individuals:
+      \begin{center}
+        $1\textcolor{red}{0}10\textcolor{red}{0}1\textcolor{red}{0}$,
+        $1\textcolor{red}{0}10\textcolor{red}{0}1\textcolor{red}{1}$,
+        $1\textcolor{red}{0}10\textcolor{red}{1}1\textcolor{red}{0}$,
+        $1\textcolor{red}{0}10\textcolor{red}{1}1\textcolor{red}{1}$,
+        $1\textcolor{red}{1}10\textcolor{red}{0}1\textcolor{red}{0}$,
+        $\ldots$
+      \end{center}
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Measures}
+    \begin{itemize}
+      \item Order(o): number of fixed positions
+      \item Defining length($\delta$): distance between the first and last defined positions.
+      \item Here: $o(H) = 4$ and $\delta(H) = 5$
+      \item Intuitively: schemata with low o and short $\delta$ have an higher probability of surviving from a generation to the next.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Possible evolutions : selection}
+  \begin{block}[Hypthesis]
+  \item Assume a fitness proportional reproduction
+  \item ...
+  \end{block}
 \end{frame}
 
 \begin{frame}{Result}
