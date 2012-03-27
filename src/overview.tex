@@ -1,28 +1,74 @@
-\section{And in the real life?}
-\begin{frame}
-  \frametitle{And in the real life?}
+\section{A general overview}
+\subsection{Where does it come from?}
 
-  \begin{block}{Theory is good...}
+\begin{frame}
+  \frametitle{The nature}
+  \begin{block}{Natural Selection}
     \begin{itemize}
-    \item<1-2> To understand why it works.
-    \item<2> Or why not.
+    \item<1-7> Darwin\cite{darwin.1840.origin.of.species} introduces
+      Natural selection.
+    \item<2-7> It implies several conditions:
+      \begin{itemize}
+      \item<3-7> Reproduction of individuals in the population.
+      \item<4-7> Variation that affects the likelihood of survival of
+        individuals.
+      \item<5-7> Heredity in reproduction.
+      \end{itemize}
     \end{itemize}
   \end{block}
 
-  \visible<3-4> {
+\visible<6-7>{
+  \begin{block}{Sexual/Asexual?}
+    \begin{itemize}
+    \item<6-7> Asexual reproduction is based on cloning, and
+      eventually muting.
+    \item<7> Sexual is based on shuffling.
+    \end{itemize}
+  \end{block}
+}
+\end{frame}
 
-    \begin{block}{But what is is real power?}
-      \begin{itemize}
-      \item<3-4> Solve optimization problem.
-      \item<4> Need to solve two problems: Encoding and Evaluation.
-      \end{itemize}
-    \end{block}
-  }
+\begin{frame}
+  \frametitle{Link with Genetic Programming?}
+  \begin{block}{On the idea}
+    \begin{itemize}[<+->]
+    \item Make evolve a population to solve a problem.
+    \item The population could be a lot of things(programs, parameters\dots).
+    \end{itemize}
+  \end{block}
+
+\invisible<1-2>{
+  \begin{block}{On the way its done}
+    \begin{itemize}[<+->]
+    \item Create the population,
+    \item Choose the best,
+    \item Keep only the best,
+    \item Make them create a new generation,
+    \item And so on until the population solves the problem.
+    \end{itemize}
+  \end{block}
+}
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{The basis graphical overview}
+  \begin{center}
+    \includegraphics[scale=0.5]{img/cycle}
+  \end{center}
+\end{frame}
 
+\subsection{Definitions}
 
+\begin{frame}
+  \frametitle{EA, GA, GP, ES... ???}
+  \begin{block}{In the literature}
+    \begin{itemize}[<+->]
+    \item When you are looking for genetic programming, you'll find a
+      lot of different things.
+    \end{itemize}
+  \end{block}
+\end{frame}
 %%% Local Variables:
 %%% mode: latex
 %%% mode: flyspell
