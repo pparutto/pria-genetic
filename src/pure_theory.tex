@@ -63,18 +63,65 @@
   \end{block}
 \end{frame}
 
+\begin{frame}{Graphical representation}
+  \begin{center}
+    \includegraphics[scale=.4]{img/schema}
+  \end{center}
+\end{frame}
+
 \begin{frame}{Possible evolutions : selection}
-  \begin{block}[Hypthesis]
-  \item Assume a fitness proportional reproduction
-  \item ...
+  \begin{block}{Hypothesis}
+    \begin{itemize}
+    \item Assume a fitness proportional reproduction
+    \item $$\mathds{P}(x,t+1) = \frac{f(x)}{\bar{f(t)}}$$
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Transmission of a schema}
+    $$\begin{array}{lll}
+      \mathds{P}(H,t+1) & = & \sum\limits_{x \in H} \frac{f(x)}{\bar{f(t)}}\\
+      & = & m(H,t) \times \frac{f(H,t)}{\bar{f(t)}}\\
+    \end{array}$$
   \end{block}
 \end{frame}
 
-\begin{frame}{Result}
-  du dada da
+\begin{frame}{Disruptions}
+  \begin{block}{Mutation}
+    \begin{itemize}
+    \item bit-wise mutations with probability $p_m$
+    \item Mutation events are independant
+    \item $\mathds{P}_{Smuta}(H) \geq (1 - p_m)^{o(H)}$
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Crossover}
+    \begin{itemize}
+      \item One point crossover with probability $p_c$
+      \item l - 1 possible crossover points
+      \item $\mathds{P}_{Scross}(H) \geq (1 - p_c \times \frac{\delta(H)}{l - 1})$
+    \end{itemize}
+  \end{block}
 \end{frame}
 
-\subsection{Extended schemata theorem}
-\begin{frame}{Extended hypothesis}
-  lol
+\begin{frame}{Schema theorem}
+  \begin{block}{Theorem}
+    $$E(m(H,t+1)) \geq \underbrace{m(H,t) \times \frac{f(H,t)}{\bar{f(t)}}}_{\mathds{P}(x,t+1)}
+    \underbrace{\times (1 - p_c \times \frac{\delta(H)}{l-1})\vphantom{\frac{f(H,t)}{\bar{f(t)}}}}_{\mathds{P}_{Smuta}}
+    \underbrace{\times (1 - p_m)^{o(H)}\vphantom{\frac{f(H,t)}{\bar{f(t)}}}}_{\mathds{P}_{Scross}}$$
+  \end{block}
+\end{frame}
+
+\begin{frame}{Extension to GP}
+\end{frame}
+
+\begin{frame}{Building Block hypothesis}
+\end{frame}
+
+\begin{frame}{Price's theorem}
+\end{frame}
+
+\begin{frame}{Limitations}
+\end{frame}
+
+\begin{frame}{Conclusion}
 \end{frame}
