@@ -79,7 +79,7 @@
 
   \begin{block}{Transmission of a schema}
     $$\begin{array}{lll}
-      \mathds{P}(H,t+1) & = & \sum\limits_{x \in H} \frac{f(x)}{\bar{f(t)}}\\
+      E(m(H,t+1)) & = & \sum\limits_{x \in H} \frac{f(x)}{\bar{f(t)}}\\
       & = & m(H,t) \times \frac{f(H,t)}{\bar{f(t)}}\\
     \end{array}$$
   \end{block}
@@ -109,19 +109,129 @@
     \underbrace{\times (1 - p_c \times \frac{\delta(H)}{l-1})\vphantom{\frac{f(H,t)}{\bar{f(t)}}}}_{\mathds{P}_{Smuta}}
     \underbrace{\times (1 - p_m)^{o(H)}\vphantom{\frac{f(H,t)}{\bar{f(t)}}}}_{\mathds{P}_{Scross}}$$
   \end{block}
-\end{frame}
 
-\begin{frame}{Extension to GP}
+  \begin{block}{Limitations}
+    \begin{itemize}
+      \item Only a lower bound
+      \item Expectation
+      \item Works with infinite population
+      \item Convergence?
+      \item Very strong hypothesis
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 \begin{frame}{Building Block hypothesis}
+  \begin{block}{Presentation}
+    \begin{itemize}
+    \item Tightly linked to shema theorem
+    \item Try to explain why does EA works
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{BBH}
+    "A genetic algorithm seek near optimal performance through the juxtaposition of short, low-order, high-performance schemas"\cite{goldberg1989}
+  \end{block}
+
+  \begin{block}{But...}
+    \begin{itemize}
+      \item Skepticism
+      \item Theoretically\cite{wright2003}
+      \item Experimentally\cite{forrest1993}
+    \end{itemize}
+  \end{block}
 \end{frame}
 
-\begin{frame}{Price's theorem}
+\begin{frame}{Extension to GP}
+  \begin{block}{Goal}
+    Give a meaningful schema representation for tree representation.
+  \end{block}
+
+  \begin{block}{Problems}
+    \begin{itemize}
+      \item Not a linear structure
+      \item Larger alphabet
+      \item How to interpret \# (don't care)?
+      \item How to keep correct o and $\delta$ measures?
+    \end{itemize}
+  \end{block}
 \end{frame}
 
-\begin{frame}{Limitations}
+\begin{frame}{Koza's schema}
+  \begin{block}{Schema definition}
+    \begin{itemize}
+      \item Non-positional list of S-expressions that can be match anywere in the tree.\cite{Koza92}
+      \item Example: H = [(- 2 x), x] matches all the programs that have at least one of each expressions.
+    \end{itemize}
+  \end{block}
+  
+  \begin{center}
+    \includegraphics[scale=0.90]{img/schemak}\\
+    The program (+ (- 2 x) x)
+  \end{center}
+
+  \begin{block}{Pro/Cons}
+    \begin{itemize}
+      \item<pro@1> An equation has been given for the schema theorem on those schema
+      \item<con@1> No order nor defining length
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{O'Reilly's schema}
+  \begin{block}{Schema definition}
+    \begin{itemize}
+      \item Multiset of subtrees and tree fragments (i.e. a subtree with a \# node)\cite{oreilly1994}
+      \item Example: H = [(+ \# x), x, x] matches any tree with at least one subtree of the form (+ \# x) and two subtrees equals to $x$
+    \end{itemize}
+  \end{block}
+
+  \begin{center}
+    \includegraphics[scale=0.90]{img/schemar}\\
+    The program (+ (- 2 x) x)
+  \end{center}
+
+    \begin{block}{Pro/Cons}
+      \begin{itemize}
+        \item<pro@1> $o(H)$ : number of nodes corresponding to s-expression and fragments
+        \item<con@1> no schema theorem nor $\delta$
+      \end{itemize}
+    \end{block}
+
 \end{frame}
 
 \begin{frame}{Conclusion}
+
+  \begin{block}{On genetic algorithm}
+    \begin{itemize}
+    \item GA possess a theoretical basics since the beginning
+    \item The Schema theorem is very controversial
+    \item But still widely present and used
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{On schema}
+    \begin{itemize}
+      \item Correctly defined over a fixed-length binary alphabet: ${0,1}^l$
+      \item Different schema definitions for tree syntax
+      \item More? Whigham's schema for context-free-grammar\cite{whigham1995}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Going further}
+  \begin{block}{limitations}
+    \begin{itemize}
+      \item Theory does not give a simple and direct insight about how to modelize a problem
+      \item Other weird effects can appear (ex: Boast)
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Other theoretical tools}
+    \begin{itemize}
+      \item Markov chains
+      \item landscape analysis
+    \end{itemize}
+  \end{block}
 \end{frame}
