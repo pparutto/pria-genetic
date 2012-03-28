@@ -198,6 +198,99 @@
         \item<con@1> no schema theorem nor $\delta$
       \end{itemize}
     \end{block}
+\end{frame}
+
+\subsection{More theory}
+\begin{frame}{Gettin' higher}
+  \begin{block}{Cannonical GA}
+    \begin{itemize}
+    \item Holland 1975
+    \item Discrete non-overlapping generations
+    \item frequency independant selection
+    \item infinite population size
+    \item Three steps: selection, random mating, reproduction
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Dynammical equation}
+    $$p(x,t+1) = \sum\limits_{x,y \in S} T(x \leftarrow y,z)
+    \frac{f(y)f(z)}{\bar{f(t)}^2}p(y,t)p(z, t)$$
+
+    where : 
+    \begin{itemize}
+      \item p(x,t) is the proportion of string x at time t
+      \item S is the search space
+      \item $T(x \leftarrow y,z)$ is the transmission function, the probability of getting x with parents y and z.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Measurement function}
+  \begin{block}{Goal}
+    Extract the macroscopic dynamic of the population for its microscopic (dinammical equation).
+  \end{block}
+
+  \begin{block}{Definition}
+    \begin{itemize}
+    \item$M: S \times P \longrightarrow \nu$
+      \begin{itemize}
+        \item S is the search space
+        \item P is a parameter family
+        \item $\nu$ is a vector space (typically $\mathbb{R}^k$)
+      \end{itemize}
+    \item Example: f, the fitness function is a measurement function
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Changes in average}
+    \begin{itemize}
+    \item Change in the population average of a measurement function is a measure of how the population is evolving
+    \item $\bar{M_t} = \sum\limits_{x} M_t(x)p(x,t)$
+    \item $\bar{M_{t+1}} = \sum\limits_{x} M_t(x)p(x,t+1)$
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Price's theorem}
+  \begin{block}{Covariance and Selection}
+    \begin{center}
+      $\forall y,z \; \phi(y,z) = \sum\limits_{x} M(x)T(x \leftarrow y,z)$\\ expected value of M among (y,z)'s offsprings
+      \end{center}
+  \end{block}
+
+  \begin{block}{Next generation}
+    $$\bar{M_{t+1}} = \bar{\phi}
+    + Cov[\phi(y,z), \frac{f(y)f(z)}{\bar{f}^2}]$$
+    where:
+    \begin{itemize}
+    \item $\bar{\phi} = \sum\limits_{y,z} \phi(y,z)p(y)p(z)$ avg. offspring value without selection
+    \item $cov[\phi(y,z), \frac{f(y)f(z)}{\bar{f}^2}] =
+      \sum\limits_{y,z} \phi(y,z) \frac{f(y)f(z)}{\bar{f}^2}p(y)p(z) -
+      \bar{\phi}$ population covariance over the distribution of genotype
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Interpretation}
+    Covariance between parental and offspring fitness is the means by which selection directs the evolution of the population
+  \end{block}
+\end{frame}
+
+\begin{frame}{Schema theorem is back}
+  \begin{block}{Thanks to Price's theorem}
+    \begin{itemize}
+      \item if $M(x, H) = \left\{\begin{array}{l}
+        1 \text{ if } x \in H\\
+        0 \text{ otherwise}
+        \end{array}
+        \right .$
+      \item and $\phi(y,z,H) = \sum\limits_{x} M(x,H)T(x \leftarrow y,z)$
+      \item then $p(H) = \bar(M(H))$
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Schema frequency change\cite{Altenberg95}}
+    $$p(H,t+1) = \bar{\phi(H)} + Cov[\phi(y,z,H), \frac{f(y)f(z)}{\bar{f}^2}]$$
+  \end{block}
 
 \end{frame}
 
