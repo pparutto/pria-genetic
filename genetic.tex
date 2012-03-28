@@ -11,9 +11,17 @@
 
 \usecolortheme[rgb={.25,.57,.29}]{structure}
 \usepackage{algorithm}
-%\usepackage{algorithmicx}
-%\usepackage[noend]{algpseudocode}
+
+\usepackage{algorithmicx}
+\usepackage[noend]{algpseudocode}
 %\setbeamercolor*{palette primary}{use=structure,fg=white,bg=mypurple}
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+\algrenewcommand\alglinenumber[1]{
+    {\sf\footnotesize\addfontfeatures{Colour=888888,Numbers=Monospaced}#1}}
+\algrenewcommand\algorithmicrequire{\textbf{Precondition:}}
+\algrenewcommand\algorithmicensure{\textbf{Postcondition:}}
+
+
 
 %% To get the page numbering clean.
 \defbeamertemplate*{footline}{shadow theme}
