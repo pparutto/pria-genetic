@@ -1,4 +1,10 @@
 \section{A general overview}
+
+\begin{frame}
+  \frametitle{Summary}
+  \tableofcontents[currentsection]
+\end{frame}
+
 \subsection{Where does it come from?}
 
 \begin{frame}
@@ -46,12 +52,31 @@
   \end{block}
 \end{frame}
 
-
 \begin{frame}
   \frametitle{A basis graphical overview}
   \begin{center}
     \includegraphics[scale=0.5]{img/cycle}
   \end{center}
+\end{frame}
+
+\subsection{When uses Evolutionary Algorithm?}
+
+\begin{frame}
+  \frametitle{When uses Evolutionary Algorithm?}
+  \begin{block}{When...}
+    \begin{itemize}
+    \item We can't find a solution with classical computations,
+    \item We are able to find a way to evaluate an individual.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Examples}
+    \begin{itemize}
+    \item Prisoner's dilemma\cite{axelrod1991},
+    \item Intrusion detection in a system\cite{crosby1995},
+    \item Autoparallelization\cite{walsh1996}.
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 \subsection{Definitions}
@@ -65,7 +90,7 @@
     \item In this talk, we consider Evolutionary Algorithm as an
       umbrella term to represent techniques which use evolution.
     \end{itemize}
-  \end{block}
+\end{block}
 
   \begin{center}
     \includegraphics[scale=0.4]{img/ea}
@@ -122,8 +147,6 @@
   \begin{block}{Characteristics}
     \begin{itemize}
     \item Only mutation.
-    \item Coma-evolution: All parents died before selection.
-    \item Plus-evolution: All are considered for selection.
     \item In the selection: each generation is more little than the
       precedent.
     \end{itemize}
@@ -164,6 +187,200 @@
     \item Many people uses LISP.
     \item We can found assembly language too.
     \item Example: can find the function $x^2/2$.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Genetic Operators}
+
+\begin{frame}
+  \frametitle{Genetic Operators}
+  \begin{block}{What is this?}
+    \begin{itemize}
+    \item The initial population has a very low fitness.
+    \item Genetic operators make them evolves.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Who are they?}
+    \begin{description}
+    \item[Crossover] Mix the genome.
+    \item[Mutation] Create new kind.
+    \item[Reproduction] Change the population.
+    \end{description}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Crossover}
+  \begin{block}{The concept}
+    \begin{itemize}
+    \item Mix the genome.
+    \item Create new elements.
+    \item There is a lot of different techniques.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Tree-based Crossover}
+    \begin{itemize}
+    \item Select randomly two nodes in two threes, and exchange their
+      child.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Crossover (cont.) - Linear crossover}
+  \begin{figure}[ht]
+    \centering
+    \visible<1-3>{
+      \subfigure{\includegraphics[width=4.5cm]{img/SinglePointCrossover}}
+    }
+    \visible<2-3>{
+    \subfigure{\includegraphics[width=4.5cm]{img/TwoPointCrossover}}
+    }
+    \visible<3>{
+    \subfigure{\includegraphics[width=4.5cm]{img/CutSpliceCrossover}}
+  }
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Mutation}
+  \begin{block}{Concept}
+    \begin{itemize}
+    \item Operate on only one individual.
+    \item Generally after the crossover.
+    \item Low probability.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{On tree structures}
+    \begin{itemize}
+    \item Take randomly a node, and replace its children by a new subtree
+      randomly created.
+    \item This subtree respects the limitation (size, depth\dots) on
+      the tree.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Mutation (cont.)}
+  \begin{block}{On linear structures}
+    \begin{itemize}
+    \item Take an element randomly.
+    \item Apply one or more changes.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Example}
+    \begin{itemize}
+    \item Suppose we are in GP, ``$r_0 = r_1 + r_2$'' could become:
+      \begin{itemize}
+      \item $r_1 = r_1 + r_2$
+      \item $r_0 = r_1 - r_2$
+      \item $r_0 = r_0 + r_0$
+      \item \dots
+      \end{itemize}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Reproduction}
+  \begin{block}{Concept}
+    \begin{itemize}
+    \item If an individual is selected, it is copied.
+    \item Two versions of the same individual (unless we chose to kill
+      the parents).
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Fitness}
+  \begin{block}{Concept}
+    \begin{itemize}
+    \item This is the function which allows to classify an individual.
+    \item There is a lot of way to consider this function\dots
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Examples}
+    \begin{itemize}
+    \item The number of matching pixels in an image matching application.
+    \item The number of wall hits for a robot controlled by GP and
+      learning obstacles avoidance.
+    \item The number of correctly classified examples in a
+      classification tasks.
+    \item The money won by a GP-controlled agent in a betting game.
+    \item \dots
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The Selection Algorithm}
+  \begin{block}{Concept}
+    \begin{itemize}
+    \item The way we select individuals.
+    \item There is a lot of way.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Fitness Proposal Selection}
+    \begin{itemize}
+    \item Used for GA-type algorithms.
+    \item Introduced by Holland\cite{holland1992}.
+    \item $p_i = f_i / \sum_{j}f_j$
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The Selection Algorithm (cont.)}
+  \begin{block}{Truncation}
+    \begin{itemize}
+    \item Used for ES-type algorithms,
+    \item Introduced by Schwefel\cite{schwefel1995},
+    \item Coma-evolution: All parents died before selection,
+    \item Plus-evolution: All are considered for selection,
+    \item We take only the $\mu$ best individuals.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Ranking}
+    \begin{itemize}
+    \item Based on the fitness order.
+    \item Two kind on ranking are (mainly) used, linear and exponential.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The Selection Algorithm (cont.)}
+  \begin{block}{Tournament}
+    \begin{itemize}
+    \item It is a competition in a subset of the population.
+    \item Participants are randomly selected.
+    \item The size is a parameters of the algorithm, and allow to
+      adjust the selection pressure.
+    \item The winners of the tournament replaced the loser.
+    \item This is a mainstream method for selection.
+    \item Easy to parallelize.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Roulette wheel}
+    \begin{itemize}
+    \item All the population is on a contiguous segment.
+    \item The size of an individual segment is proportional to its fitness.
+    \item We select N times a random number (N is the number of the
+      next generation).
+    \item The individual whose segment spans the random number is selected.
     \end{itemize}
   \end{block}
 \end{frame}

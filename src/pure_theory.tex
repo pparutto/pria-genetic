@@ -1,9 +1,8 @@
 \section{Theory}
 
-\begin{frame}{Theory}
-  \begin{center}
-    \includegraphics{img/theory}
-  \end{center}
+\begin{frame}
+  \frametitle{Summary}
+  \tableofcontents[currentsection]
 \end{frame}
 
 \subsection{Presentation}
@@ -35,7 +34,7 @@
     \item Represent a group of individual who all share some characteristics.
     \item One schema, two schemata ;)
     \end{itemize}
-  \end{block}    
+  \end{block}
 
   \begin{block}{Definition}
     \begin{itemize}
@@ -173,7 +172,7 @@
       \item Example: H = [(- 2 x), x] matches all the programs that have at least one of each expressions.
     \end{itemize}
   \end{block}
-  
+
   \begin{center}
     \includegraphics[scale=0.90]{img/schemak}\\
     The program (+ (- 2 x) x)
@@ -225,7 +224,7 @@
     $$p(x,t+1) = \sum\limits_{x,y \in S} T(x \leftarrow y,z)
     \frac{f(y)f(z)}{\bar{f(t)}^2}p(y,t)p(z, t)$$
 
-    where : 
+    where :
     \begin{itemize}
       \item p(x,t) is the proportion of string x at time t
       \item S is the search space
