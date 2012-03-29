@@ -1,5 +1,13 @@
 \section{Theory}
 
+\begin{frame}{Theory}
+  \begin{center}
+    \includegraphics{img/theory}
+  \end{center}
+\end{frame}
+
+\subsection{Presentation}
+
 \begin{frame}{Motivations}
   \begin{block}{Algorithmic problems}
     \begin{itemize}
@@ -8,7 +16,7 @@
     \end{itemize}
   \end{block}
 
-  \begin{block}{Modelisation problems}
+  \begin{block}{Modelization problems}
     \begin{itemize}
       \item How to encode a problem?
       \item Size of the initial population?
@@ -20,11 +28,11 @@
 \end{frame}
 
 \subsection{Schemata Theorem}
-\begin{frame}{Presentation}
+\begin{frame}{Schemata}
   \begin{block}{Goal}
     \begin{itemize}
     \item Defined by J.Holland in 1975\cite{holland1992}.
-    \item Represent a group of indidual who all share some caracteristics.
+    \item Represent a group of individual who all share some characteristics.
     \item One schema, two schemata ;)
     \end{itemize}
   \end{block}    
@@ -37,7 +45,7 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{Example and mesures}
+\begin{frame}{Example and measures}
   \begin{block}{Example}
     \begin{itemize}
     \item The schema: $H = 1\textcolor{red}{\#}10\textcolor{red}{\#}1\textcolor{red}{\#}$
@@ -124,13 +132,13 @@
 \begin{frame}{Building Block hypothesis}
   \begin{block}{Presentation}
     \begin{itemize}
-    \item Tightly linked to shema theorem
+    \item Tightly linked to schema theorem
     \item Try to explain why does EA works
     \end{itemize}
   \end{block}
 
   \begin{block}{BBH}
-    "A genetic algorithm seek near optimal performance through the juxtaposition of short, low-order, high-performance schemas"\cite{goldberg1989}
+    "A genetic algorithm seek near optimal performance through the juxtaposition of short, low-order, high-performance schemata"\cite{goldberg1989}
   \end{block}
 
   \begin{block}{But...}
@@ -142,9 +150,10 @@
   \end{block}
 \end{frame}
 
+\section{Schemata extension}
 \begin{frame}{Extension to GP}
   \begin{block}{Goal}
-    Give a meaningful schema representation for tree representation.
+    Give a meaningful schema definition for tree representation.
   \end{block}
 
   \begin{block}{Problems}
@@ -182,7 +191,7 @@
 \begin{frame}{O'Reilly's schema}
   \begin{block}{Schema definition}
     \begin{itemize}
-      \item Multiset of subtrees and tree fragments (i.e. a subtree with a \# node)\cite{oreilly1994}
+      \item Multi-set of subtrees and tree fragments (i.e. a subtree with a \# node)\cite{oreilly1994}
       \item Example: H = [(+ \# x), x, x] matches any tree with at least one subtree of the form (+ \# x) and two subtrees equals to $x$
     \end{itemize}
   \end{block}
@@ -202,7 +211,7 @@
 
 \subsection{More theory}
 \begin{frame}{Gettin' higher}
-  \begin{block}{Cannonical GA}
+  \begin{block}{Canonical GA}
     \begin{itemize}
     \item Holland 1975
     \item Discrete non-overlapping generations
@@ -212,7 +221,7 @@
     \end{itemize}
   \end{block}
 
-  \begin{block}{Dynammical equation}
+  \begin{block}{Dynamical equation}
     $$p(x,t+1) = \sum\limits_{x,y \in S} T(x \leftarrow y,z)
     \frac{f(y)f(z)}{\bar{f(t)}^2}p(y,t)p(z, t)$$
 
@@ -227,7 +236,7 @@
 
 \begin{frame}{Measurement function}
   \begin{block}{Goal}
-    Extract the macroscopic dynamic of the population for its microscopic (dinammical equation).
+    Extract the macroscopic dynamic of the population for its microscopic (dynamical equation).
   \end{block}
 
   \begin{block}{Definition}
@@ -254,7 +263,7 @@
 \begin{frame}{Price's theorem}
   \begin{block}{Covariance and Selection}
     \begin{center}
-      $\forall y,z \; \phi(y,z) = \sum\limits_{x} M(x)T(x \leftarrow y,z)$\\ expected value of M among (y,z)'s offsprings
+      $\forall y,z \; \phi(y,z) = \sum\limits_{x} M(x)T(x \leftarrow y,z)$\\ expected value of M among (y,z)'s offspring
       \end{center}
   \end{block}
 
@@ -264,7 +273,7 @@
     where:
     \begin{itemize}
     \item $\bar{\phi} = \sum\limits_{y,z} \phi(y,z)p(y)p(z)$ avg. offspring value without selection
-    \item $cov[\phi(y,z), \frac{f(y)f(z)}{\bar{f}^2}] =
+    \item $Cov[\phi(y,z), \frac{f(y)f(z)}{\bar{f}^2}] =
       \sum\limits_{y,z} \phi(y,z) \frac{f(y)f(z)}{\bar{f}^2}p(y)p(z) -
       \bar{\phi}$ population covariance over the distribution of genotype
     \end{itemize}
@@ -316,7 +325,7 @@
 \begin{frame}{Going further}
   \begin{block}{limitations}
     \begin{itemize}
-      \item Theory does not give a simple and direct insight about how to modelize a problem
+      \item Theory does not give a simple and direct insight about how to model a problem
       \item Other weird effects can appear (ex: Boast)
     \end{itemize}
   \end{block}
