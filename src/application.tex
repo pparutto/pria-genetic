@@ -71,7 +71,16 @@
   \end{block}
 
   \begin{block}{Example}
-    TODO: Display parameters for one bot
+    \begin{itemize}
+		\item Familiar
+		\begin{itemize}
+			\item Attack: Always even if sitting
+			\item Teleport: If monster on the screen
+			\item Only attack in search mode
+			\item Only attack if hp $>$ 2117
+			\item Only attack if sp $>$ 14
+		\end{itemize}
+	\end{itemize}
   \end{block}
 
 \end{frame}
@@ -101,6 +110,38 @@
 
 \subsection{Result}
 
-\begin{frame}{Result}
-  TODO: Insert results for different fitness functions here
+\begin{frame}{Life points}
+	\begin{block}{Behaviour}
+		\begin{itemize}
+			\item Attack: Never
+			\item Teleport: Disconnect (or if monster on the screen)
+			\item Only attack in search mode
+			\item Only attack if hp $>$ 1872
+			\item Only attack if sp $>$ 86
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Experience points}	
+	\begin{block}{Behaviour}
+		\begin{itemize}
+			\item Attack: Always
+			\item Teleport: If monster is below 0 meter(s)
+			\item Try to interrupt this monster's skills
+			\item Only attack if hp $>$ 4186
+			\item Only attack if sp $>$ 92
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Hybrid}
+	\begin{block}{Behaviour}
+		\begin{itemize}
+			\item Attack: If monster attacked you
+			\item Teleport: If monster is below 1 meter(s)
+			\item Try to interrupt this monster's skills
+			\item Only attack if hp $>$ 3129
+			\item Only attack if sp $>$ 12
+		\end{itemize}
+	\end{block}
 \end{frame}
