@@ -36,7 +36,7 @@
   \frametitle{Link with Genetic Programming?}
   \begin{block}{On the idea}
     \begin{itemize}
-    \item Make evolve a population to solve a problem.
+    \item Evolve a population to solve a problem.
     \item The population could be a lot of things(programs, parameters\dots).
     \end{itemize}
   \end{block}
@@ -44,8 +44,7 @@
   \begin{block}{On the way its done}
     \begin{itemize}
     \item Create the population,
-    \item Choose the best,
-    \item Keep only the best,
+    \item Keep only the best ones,
     \item Make them create a new generation,
     \item And so on until the population solves the problem.
     \end{itemize}
@@ -59,10 +58,10 @@
   \end{center}
 \end{frame}
 
-\subsection{When uses Evolutionary Algorithm?}
+\subsection{When to use Evolutionary Algorithm?}
 
 \begin{frame}
-  \frametitle{When uses Evolutionary Algorithm?}
+  \frametitle{When to use Evolutionary Algorithm?}
   \begin{block}{When...}
     \begin{itemize}
     \item We can't find a solution with classical computations,
@@ -147,7 +146,7 @@
   \begin{block}{Characteristics}
     \begin{itemize}
     \item Only mutation.
-    \item In the selection: each generation is more little than the
+    \item In the selection: each generation is smaller than the
       precedent.
     \end{itemize}
   \end{block}
@@ -184,8 +183,8 @@
 
   \begin{block}{Characteristics}
     \begin{itemize}
-    \item Many people uses LISP.
-    \item We can found assembly language too.
+    \item Many people use LISP.
+    \item Assembly languages are also used.
     \item Example: can find the function $x^2/2$.
     \end{itemize}
   \end{block}
@@ -197,15 +196,15 @@
   \frametitle{Genetic Operators}
   \begin{block}{What is this?}
     \begin{itemize}
-    \item The initial population has a very low fitness.
+    \item The initial population generally has a very low fitness.
     \item Genetic operators make them evolves.
     \end{itemize}
   \end{block}
 
   \begin{block}{Who are they?}
     \begin{description}
-    \item[Crossover] Mix the genome.
-    \item[Mutation] Create new kind.
+    \item[Crossover] Create new individuals by mixing.
+    \item[Mutation] Create new individuals by random alteration.
     \item[Reproduction] Change the population.
     \end{description}
   \end{block}
@@ -218,13 +217,13 @@
     \begin{itemize}
     \item Mix the genome.
     \item Create new elements.
-    \item There is a lot of different techniques.
+    \item There are a lot of different techniques.
     \end{itemize}
   \end{block}
 
   \begin{block}{Tree-based Crossover}
     \begin{itemize}
-    \item Select randomly two nodes in two threes, and exchange their
+    \item Select randomly two nodes in two trees, and exchange their
       child.
     \end{itemize}
   \end{block}
@@ -347,7 +346,7 @@
     \item Used for ES-type algorithms,
     \item Introduced by Schwefel\cite{schwefel1995},
     \item Coma-evolution: All parents died before selection,
-    \item Plus-evolution: All are considered for selection,
+    \item Plus-evolution: Everyone are considered for selection,
     \item We take only the $\mu$ best individuals.
     \end{itemize}
   \end{block}
@@ -368,7 +367,7 @@
     \item Participants are randomly selected.
     \item The size is a parameters of the algorithm, and allow to
       adjust the selection pressure.
-    \item The winners of the tournament replaced the loser.
+    \item The winners of the tournament are selected.
     \item This is a mainstream method for selection.
     \item Easy to parallelize.
     \end{itemize}
@@ -378,7 +377,7 @@
     \begin{itemize}
     \item All the population is on a contiguous segment.
     \item The size of an individual segment is proportional to its fitness.
-    \item We select N times a random number (N is the number of the
+    \item We select N times a random number (N is the size of the
       next generation).
     \item The individual whose segment spans the random number is selected.
     \end{itemize}

@@ -22,8 +22,6 @@
       \item Agressive
       \item Passive
       \end{itemize}
-    \item
-
     \end{itemize}
   \end{block}
 
@@ -39,17 +37,16 @@
 
   \begin{block}{Definition}
     \begin{itemize}
-    \item Program (Bot) which simulate a player in a MMORPG (here Ragnarok Online)
+    \item Program (Bot) which simulates a player in a MMORPG (here Ragnarok Online)
     \item Take a configuration file (so the bot is scriptable) as input
     \end{itemize}
   \end{block}
 
   \begin{block}{Why this application ?}
     \begin{itemize}
-    \item There is a complex environment where the bot has life points, experience, position and a lot of other properties
+    \item Complex environment
     \item The bot is subjected to virtual physical constraints therefore we can have a lot of different fitness functions
     \item A lot of parameters available to customize the bot behaviour
-    \item Easy to implement
     \end{itemize}
   \end{block}
 
@@ -72,15 +69,15 @@
 
   \begin{block}{Example}
     \begin{itemize}
-		\item Familiar
-		\begin{itemize}
-			\item Attack: Always even if sitting
-			\item Teleport: If monster on the screen
-			\item Only attack in search mode
-			\item Only attack if hp $>$ 2117
-			\item Only attack if sp $>$ 14
-		\end{itemize}
-	\end{itemize}
+    \item Familiar
+      \begin{itemize}
+      \item Attack: Always even if sitting
+      \item Teleport: If monster on the screen
+      \item Only attack in search mode
+      \item Only attack if hp $>$ 2117
+      \item Only attack if sp $>$ 14
+      \end{itemize}
+    \end{itemize}
   \end{block}
 
 \end{frame}
@@ -111,37 +108,37 @@
 \subsection{Result}
 
 \begin{frame}{Life points}
-	\begin{block}{Behaviour}
-		\begin{itemize}
-			\item Attack: Never
-			\item Teleport: Disconnect (or if monster on the screen)
-			\item Only attack in search mode
-			\item Only attack if hp $>$ 1872
-			\item Only attack if sp $>$ 86
-		\end{itemize}
-	\end{block}
+  \begin{block}{Behaviour}
+    \begin{itemize}
+    \item Attack: Never
+    \item Teleport: Disconnect (or if monster on the screen)
+    \item Only attack in search mode
+    \item Only attack if hp $>$ 1872
+    \item Only attack if sp $>$ 86
+    \end{itemize}
+  \end{block}
 \end{frame}
 
-\begin{frame}{Experience points}	
-	\begin{block}{Behaviour}
-		\begin{itemize}
-			\item Attack: Always
-			\item Teleport: If monster is below 0 meter(s)
-			\item Try to interrupt this monster's skills
-			\item Only attack if hp $>$ 4186
-			\item Only attack if sp $>$ 92
-		\end{itemize}
-	\end{block}
+\begin{frame}{Experience points}
+  \begin{block}{Behaviour}
+    \begin{itemize}
+    \item Attack: Always
+    \item Teleport: If monster is below 0 meter(s)
+    \item Try to interrupt this monster's skills
+    \item Only attack if hp $>$ 4186
+    \item Only attack if sp $>$ 92
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 \begin{frame}{Hybrid}
-	\begin{block}{Behaviour}
-		\begin{itemize}
-			\item Attack: If monster attacked you
-			\item Teleport: If monster is below 1 meter(s)
-			\item Try to interrupt this monster's skills
-			\item Only attack if hp $>$ 3129
-			\item Only attack if sp $>$ 12
-		\end{itemize}
-	\end{block}
+  \begin{block}{Behaviour}
+    \begin{itemize}
+    \item Attack: If monster attacked you
+    \item Teleport: If monster is below 1 meter(s)
+    \item Try to interrupt this monster's skills
+    \item Only attack if hp $>$ 3129
+    \item Only attack if sp $>$ 12
+    \end{itemize}
+  \end{block}
 \end{frame}
